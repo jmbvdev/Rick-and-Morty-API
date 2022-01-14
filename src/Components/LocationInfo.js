@@ -1,22 +1,22 @@
 import React from 'react';
-import ResidentList from './ResindetList';
+import ResidentInfo from './ResindetInfo';
 
-const LocationInfo = ({character}) => {
+const LocationInfo = ({location}) => {
     
     
     return (
         <div className="location-info">
-               <h1>{character.name}</h1> 
+               <h1>{location.name}</h1> 
             <div className='location-title'>
 
-               <p><b>type: </b>{character.type}</p>
-               <p><b>Dimension: </b>{character.dimension}</p>
-               <p><b>Population: </b>{character.residents?.length}</p>
+               <p><b>type: </b>{location.type}</p>
+               <p><b>Dimension: </b>{location.dimension}</p>
+               <p><b>Population: </b>{location.residents?.length}</p>
             </div>
            
                <div className='container'>
                {
-                   character.residents?.map(resident=><ResidentList resident={resident} key={resident}/>)
+                   location.residents?.map(resident=><ResidentInfo resident={resident} key={resident}/>)
                }
                </div>
         </div>

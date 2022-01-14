@@ -8,12 +8,12 @@ import SearchBox from './Components/SearchBox';
 function App() {
 
   const randomId= Math.floor(Math.random()*126)+1
-  const [character, setCharacter]=useState({})
+  const [location, setLocation]=useState({})
   
 
 useEffect(()=>{
   axios.get(`https://rickandmortyapi.com/api/location/${randomId}`)
-  .then(res=>setCharacter(res.data))
+  .then(res=>setLocation(res.data))
 },[])
 
 
@@ -25,9 +25,9 @@ useEffect(()=>{
 
       </header>
     <div className="search">
-      <SearchBox setCharacter={setCharacter}/>
+      <SearchBox setCharacter={setLocation}/>
     </div>
-      <LocationInfo character={character} key={character.url}/>
+      <LocationInfo location={location} key={location.url}/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const ResidentList = ({resident}) => {
+const ResidentInfo = ({resident}) => {
 
     useEffect(()=>{
         axios.get(resident)
@@ -27,4 +27,4 @@ const ResidentList = ({resident}) => {
     );
 };
 
-export default ResidentList;
+export default ResidentInfo;
