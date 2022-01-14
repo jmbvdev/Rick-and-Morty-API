@@ -7,11 +7,11 @@ import SearchBox from './Components/SearchBox';
 
 function App() {
 
-  const randomId= Math.floor(Math.random()*126)+1
   const [location, setLocation]=useState({})
   
-
-useEffect(()=>{
+  
+  useEffect(()=>{
+  const randomId= Math.floor(Math.random()*126)+1
   axios.get(`https://rickandmortyapi.com/api/location/${randomId}`)
   .then(res=>setLocation(res.data))
 },[])

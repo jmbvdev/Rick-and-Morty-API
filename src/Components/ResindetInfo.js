@@ -7,7 +7,7 @@ const ResidentInfo = ({resident}) => {
         axios.get(resident)
         .then(res=>setResidents(res.data))
 
-    },[])
+    },[resident])
 
     const [residents, setResidents]=useState("")
 
